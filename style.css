@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin, padding
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: #daf0ff;
+
+  position: relative;
+  overflow: clip;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Calculator */
+
+.calculator {
+  background: #f7f8fb;
+  backdrop-filter: blur(51px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 39px;
+  padding: 20px;
+}
+
+.calculator button {
+  outline: none;
+  height: 60px;
+  /* width: 62px; */
+  cursor: pointer;
+  background: linear-gradient(
+    129.7deg,
+    rgba(255, 255, 255, 0.6) -9.69%,
+    rgba(255, 255, 255, 0.4) 114.23%
+  );
+  border: 1px solid #ffffff;
+  backdrop-filter: blur(6px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 16px;
+
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+
+  color: #38b9ff;
+}
+
+.controls {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, 1fr);
+  user-select: none;
+}
+
+.controls button:last-child {
+  grid-column: span 2 / span 2;
+  width: auto !important;
+}
+
+.display {
+  height: 200px;
+  transition: all 0.2s ease-in-out;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.display .io-wrapper {
+  overflow-y: auto;
+}
+
+.display::-webkit-scrollbar,
+.io-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.display .io {
+  line-height: 1.1 !important;
+}
+
+.display .io {
+  margin-bottom: 12px;
+}
+
+.display .result {
+  font-weight: 500;
+  font-size: 48px;
+  color: #424242;
+  text-align: right;
+}
+
+.display input,
+.display .input {
+  font-size: 24px;
+  text-align: right;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  caret-color: black;
+}
+
+.display > input:focus {
+  outline: none;
+}
